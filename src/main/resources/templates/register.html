@@ -1,0 +1,50 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Form Validation</title>
+    <style>
+        body{
+            background-color: #ded2c5;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            height: 250px;
+            margin-top: 10%;
+            background:coral;
+            padding: 20px;
+        }
+        input, select {
+            width: 200px;
+        }
+        #birthDay{
+            color: blue;
+        }
+
+    </style>
+    <script src="../static/js/happy_birthday.js">
+
+    </script>
+</head>
+<body>
+<p id= "birthDay"></p>
+<p id= "currentDay"></p>
+<p id= "birthMonth"></p>
+<p id= "currentMonth"></p>
+<form action="" name="myForm" method="POST" onsubmit="checkBirthday(event)">
+    <input type="text" name="Name"  placeholder="Enter a username" pattern="^[a-zA-Z]+"
+           title="Please start username with a letter from a-z "
+           required/>
+    <input type="email" name="EmailTwo"  placeholder="Email with type email" required/>
+    <input type="tel" name="Zip" min="5" maxlength="5" id="ZipID" placeholder="Enter Zip Code" pattern="\d{5}" title="Five digits only" required/>
+    <input type="date" id="date" value="2024-12-31"
+           min="1910-01-01" max="2024-12-31" placeholder="Date of Birth" required/>
+    <!-- Select dropdown for countries -->
+    <select name="Country" id="countrySelect" required>
+        <option value="">Select Country</option>
+    </select>
+    <input type="password" name="password" id="password" placeholder="Password" required/>
+    <input type="submit" value="Submit"/>
+</form>
+</body>
